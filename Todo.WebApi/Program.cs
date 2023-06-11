@@ -28,6 +28,15 @@ builder.Services
     .AddFiltering()
     .AddSorting();
 
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(builder => {
+        builder.WithOrigins("http://localhost:3000")
+               .AllowAnyOrigin()
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -37,11 +46,11 @@ if (app.Environment.IsDevelopment()) {
     app.UseSwaggerUI();
 }
 
+app.UseCors();
 app.UseHttpsRedirection();
 app.UseRouting()
     .UseEndpoints(e => {
         e.MapGraphQL();
     });
-
 
 app.Run();
