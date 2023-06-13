@@ -5,14 +5,12 @@ namespace Todo.WebApi.Data
 {
     public class TodoDbContext
     {
-        private readonly IMongoCollection<TodoItem>? _todoCollection;
-
         public TodoDbContext(IMongoClient mongoClient)
         {
             var database = mongoClient.GetDatabase("TodoDb");
-            _todoCollection = database.GetCollection<TodoItem>("TodoItems");
+            TodoItems = database.GetCollection<TodoItem>("TodoItems");
         }
 
-        public IMongoCollection<TodoItem> TodoItems => _todoCollection;
+        public IMongoCollection<TodoItem> TodoItems { get; }
     }
 }
