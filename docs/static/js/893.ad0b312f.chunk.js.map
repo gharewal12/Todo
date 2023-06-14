@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/893.ad0b312f.chunk.js","mappings":"mKAKA,EALc,WACV,OAAQA,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,CAAAC,SAAE,qBAGd,C","sources":["pages/Start/Start.tsx"],"sourcesContent":["const Start = () => {\r\n    return (<>\r\n        Let's Get Started\r\n    </>)\r\n}\r\nexport default Start;"],"names":["_jsx","_Fragment","children"],"sourceRoot":""}
